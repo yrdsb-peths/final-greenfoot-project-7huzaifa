@@ -9,7 +9,9 @@ import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Survivor extends Actor
 {
     GreenfootImage[] idleRight = new GreenfootImage[7];
-    GreenfootImage[] idleLeft = new GreenfootImage[7];    
+    GreenfootImage[] idleLeft = new GreenfootImage[7];
+    GreenfootImage[] shootRight = new GreenfootImage[6];
+    GreenfootImage[] shootLeft = new GreenfootImage[6];
     SimpleTimer animationTimer = new SimpleTimer(); 
     private int imageIndex;    
     String facing = "right";
@@ -24,6 +26,16 @@ public class Survivor extends Actor
             idleLeft[i] = new GreenfootImage("images/character/walk" + i + ".png");
             idleLeft[i].scale(100, 100);
         }
+        for(int i = 0; i < shootRight.length; i++){
+            shootRight[i] = new GreenfootImage("images/character/shoot" + i + ".png");
+            shootRight[i].scale(100, 100);
+            shootRight[i].mirrorHorizontally();
+        }    
+        for(int i = 0; i < shootLeft.length; i++){
+            shootLeft[i] = new GreenfootImage("images/character/shoot" + i + ".png");
+            shootLeft[i].scale(100, 100);
+        }
+        
         animationTimer.mark();
         setImage(idleRight[0]);
     }
@@ -38,13 +50,16 @@ public class Survivor extends Actor
                 setImage(idleLeft[imageIndex]);
                 imageIndex = (imageIndex + 1) % idleLeft.length;
             }
+            if(Greenfoot.isKeyDown("space") && facing.equals("right")){
+                setImage(shootRight[imageIndex]);
+                imageIndex = (imageIndex + 1) % idleRight.length;
+            }
             animationTimer.mark();
         }
     }
     
     public void act() 
     {
-        
         if(Greenfoot.isKeyDown("a")){
             move(-6);
             facing = "left";
