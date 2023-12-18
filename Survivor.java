@@ -35,7 +35,6 @@ public class Survivor extends Actor
             shootLeft[i] = new GreenfootImage("images/character/shoot" + i + ".png");
             shootLeft[i].scale(100, 100);
         }
-        
         animationTimer.mark();
         setImage(idleRight[0]);
     }
@@ -56,8 +55,8 @@ public class Survivor extends Actor
             }
             animationTimer.mark();
         }
-    }
-    
+    }    
+
     public void act() 
     {
         if(Greenfoot.isKeyDown("a")){

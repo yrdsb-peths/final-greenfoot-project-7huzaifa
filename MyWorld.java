@@ -19,5 +19,13 @@ public class MyWorld extends World
         super(600, 400, 1);
         Survivor survivor = new Survivor();
         addObject(survivor, 300, 300);
+        createZombie();
+    }
+        public void createZombie()
+    {
+        Zombie zombie = new Zombie();
+        int x = 600;
+        int y = Greenfoot.getRandomNumber(400);
+        addObject(zombie, x, y);
     }
 }
