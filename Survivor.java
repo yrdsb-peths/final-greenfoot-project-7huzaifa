@@ -55,8 +55,8 @@ public class Survivor extends Actor
             }
             animationTimer.mark();
         }
-    }
-    
+    }    
+
     public void act() 
     {
         if(Greenfoot.isKeyDown("a")){
