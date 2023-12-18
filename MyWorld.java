@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    private GreenfootImage bg;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,6 +20,10 @@ public class MyWorld extends World
         Survivor survivor = new Survivor();
         addObject(survivor, 300, 300);
         createZombie();
+        
+        bg = new GreenfootImage("images/Backyardpool.png");
+        bg.scale(getWidth(), getHeight());
+        setBackground(bg);
     }
         public void createZombie()
     {
