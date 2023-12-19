@@ -32,4 +32,9 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(400);
         addObject(zombie, x, y);
     }
+    public void onGameOver(){
+        Label gameOverLabel = new Label("Game Over",100);
+        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        Greenfoot.setWorld(new GameOverWorld());
+    }
 }
