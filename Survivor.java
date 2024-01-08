@@ -8,12 +8,14 @@ import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Survivor extends Actor
 {
+    GreenfootSound walkingSound = new GreenfootSound("sounds/walking.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[7];
     GreenfootImage[] idleLeft = new GreenfootImage[7];
     GreenfootImage[] shootRight = new GreenfootImage[6];
     GreenfootImage[] shootLeft = new GreenfootImage[6];
     SimpleTimer animationTimer = new SimpleTimer(); 
-    private int imageIndex;    
+    private int imageIndex;  
+    private static int score;
     String facing = "right";
     public Survivor() {
         imageIndex = 0;
@@ -76,5 +78,10 @@ public class Survivor extends Actor
             facing = "right";
         }
         animateSurvivor();
+        walkingSound.play();
+    }
+    
+    public static int getScore(){
+        return score;
     }
 }

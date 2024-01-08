@@ -13,6 +13,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     //private int speed = 1;
+    GreenfootSound zombieSound = new GreenfootSound("sounds/zombie.mp3");
     GreenfootImage[] zombieLeft = new GreenfootImage[24];
     SimpleTimer animationTimer = new SimpleTimer(); 
     private int imageIndex;    
@@ -27,9 +28,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
         if(facing.equals("left")){
             move(-1);
         }
-                if(getX() <= 0) {
+        if(getX() <= 0) {
             world.onGameOver();
         }
+        zombieSound.play();
     }    
         
     public Zombie() {
