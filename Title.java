@@ -11,7 +11,7 @@ public class Title extends World
     Label titleLabel = new Label("Zombie Survival", 90);
     Label instructionsLabel = new Label("(Use \u2190 and \u2192 to Move)", 40);
     Label startLabel = new Label("Click to start", 50);
-    
+    private GreenfootImage titleScreen;
     public Title()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -21,6 +21,10 @@ public class Title extends World
         addObject(startLabel, getWidth()/2, 280);
         addObject(instructionsLabel, getWidth()/2, 375);
         prepare();
+        
+        titleScreen = new GreenfootImage("images/titleScreen.png");
+        titleScreen.scale(getWidth(), getHeight());
+        setBackground(titleScreen);        
     }
 
     public void act(){

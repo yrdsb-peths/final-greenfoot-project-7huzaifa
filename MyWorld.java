@@ -9,10 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     private GreenfootImage bg;
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    private static int score = 0;
+    private Label scoreLabel;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,6 +22,11 @@ public class MyWorld extends World
         bg = new GreenfootImage("images/Backyardpool.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
+        
+        score = 0;
+        
+        scoreLabel = new Label(0,70);
+        addObject(scoreLabel, 550, 50);
     }
         public void createZombie()
     {
@@ -32,6 +35,13 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(400);
         addObject(zombie, x, y);
     }
+    public void increaseScore() {
+        score = score + 1;
+        scoreLabel.setValue(score);
+    } 
+    public static int getScore(){
+        return score;
+    }    
     public void onGameOver(){
         Label gameOverLabel = new Label("Game Over",100);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
