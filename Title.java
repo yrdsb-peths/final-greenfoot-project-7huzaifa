@@ -35,7 +35,7 @@ public class Title extends World
     private void prepare()
     {
         Survivor survivor = new Survivor();
-        addObject(survivor,100,193);
+        addObject(survivor,300,150);
         
     }
 }
