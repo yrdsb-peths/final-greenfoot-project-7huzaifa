@@ -77,10 +77,19 @@ public class Survivor extends Actor
             move(6);
             facing = "right";
         }
+        if(Greenfoot.isKeyDown("w")){
+            moveVertically(-6);
+        }
+        else if(Greenfoot.isKeyDown("s")){
+            moveVertically(6);
+        }        
         animateSurvivor();
         walkingSound.play();
     }
-    
+    private void moveVertically(int distance) {
+        int yCoordinate = getY() + distance;
+        setLocation(getX(), yCoordinate);
+    }    
     public static int getScore(){
         return score;
     }
