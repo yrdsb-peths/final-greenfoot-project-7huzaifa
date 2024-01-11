@@ -8,23 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Title extends World
 {
-    Label titleLabel = new Label("Zombie Survival", 90);
-    Label instructionsLabel = new Label("(Use \u2190 and \u2192 to Move)", 40);
-    Label startLabel = new Label("Click to start", 50);
-    //private GreenfootImage titleScreen;
+
+    private GreenfootImage titleScreen;
     public Title()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-
-        addObject(titleLabel, getWidth()/2, 40);
-        addObject(startLabel, getWidth()/2, 280);
-        addObject(instructionsLabel, getWidth()/2, 375);
         prepare();
         
-        //titleScreen = new GreenfootImage("images/titleScreen.png");
-        //titleScreen.scale(getWidth(), getHeight());
-        //setBackground(titleScreen);        
+        titleScreen = new GreenfootImage("images/titleScreenImage.png");
+        titleScreen.scale(getWidth(), getHeight());
+        setBackground(titleScreen);        
     }
 
     public void act(){
@@ -40,6 +34,11 @@ public class Title extends World
      */
     private void prepare()
     {
+        Zombie zombie = new Zombie();
+        addObject(zombie,479,193);
+        
+        Survivor survivor = new Survivor();
+        addObject(survivor,100,193);
         
     }
 }
