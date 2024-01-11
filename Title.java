@@ -34,9 +34,6 @@ public class Title extends World
      */
     private void prepare()
     {
-        Zombie zombie = new Zombie();
-        addObject(zombie,479,193);
-        
         Survivor survivor = new Survivor();
         addObject(survivor,100,193);
         
