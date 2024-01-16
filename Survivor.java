@@ -51,7 +51,7 @@ public class Survivor extends Actor
                 setImage(idleLeft[imageIndex]);
                 imageIndex = (imageIndex + 1) % idleLeft.length;
             }
-            if(Greenfoot.isKeyDown("space") && facing.equals("right")){
+            if(Greenfoot.isKeyDown("space")){//&& facing.equals("right")){
                 setImage(shootRight[imageIndex]);
                 imageIndex = (imageIndex + 1) % idleRight.length;
             }
@@ -83,6 +83,9 @@ public class Survivor extends Actor
         else if(Greenfoot.isKeyDown("s")){
             moveVertically(6);
         }        
+        if(Greenfoot.isKeyDown("space")){
+            shoot();
+        }        
         animateSurvivor();
         walkingSound.play();
     }
@@ -93,4 +96,17 @@ public class Survivor extends Actor
     public static int getScore(){
         return score;
     }
+    private void shoot() {
+        Bullet bullet = new Bullet();
+        int x = 20;
+        int y = getY() + 10;
+        getWorld().addObject(bullet, x, y);
+        if(isTouching(Zombie.class)){
+            removeTouching(Zombie.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createZombie();
+            world.increaseScore();
+            score = world.getScore();
+        }        
+    }    
 }
