@@ -51,7 +51,7 @@ public class Survivor extends Actor
         else if(Greenfoot.isKeyDown("s")){
             moveVertically(6);
         }        
-        if(Greenfoot.isKeyDown("space")){
+        if(Greenfoot.mouseClicked(null)){
             shoot();
         }        
         animateSurvivor();
@@ -67,14 +67,7 @@ public class Survivor extends Actor
     private void shoot() {
         Bullet bullet = new Bullet();
         int x = 20;
-        int y = getY() + 10;
-        getWorld().addObject(bullet, x, y);
-        if(isTouching(Zombie.class)){
-            removeTouching(Zombie.class);
-            MyWorld world = (MyWorld) getWorld();
-            world.createZombie();
-            world.increaseScore();
-            score = world.getScore();
-        }        
+        int y = getY();
+        getWorld().addObject(bullet, x, y);       
     }    
 }

@@ -15,7 +15,14 @@ public class Bullet extends Actor
     public void act() 
     {
         GreenfootImage bullet = new GreenfootImage("images/bullet.png");
-        setLocation(20, getY());
         MyWorld world = (MyWorld) getWorld();
+        move(2);
+        Zombie zombie = (Zombie) getOneIntersectingObject(Zombie.class);
+        if(zombie != null){
+            world.removeObject(zombie);
+            world.removeObject(this);
+            world.increaseScore();
+            
+        }    
     }    
 }
