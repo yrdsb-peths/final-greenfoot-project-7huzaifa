@@ -21,12 +21,13 @@ public class Title extends World
         setBackground(titleScreen);        
     }
 
+
     public void act(){
         if(Greenfoot.mouseClicked(null)){
-            MyWorld world = new MyWorld();
-            Greenfoot.setWorld(world);
+            Controls controlsWorld = new Controls();
+            Greenfoot.setWorld(controlsWorld);
         }
-    }
+    }    
 
     /**
      * Prepare the world for the start of the program.
