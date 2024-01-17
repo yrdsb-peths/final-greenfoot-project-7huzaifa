@@ -23,6 +23,10 @@ public class Bullet extends Actor
             world.removeObject(this);
             world.increaseScore();
             
+        }   
+        if(getX() >= getWorld().getWidth()-1){
+            getWorld().removeObject(this);
+            return;
         }    
     }    
 }
