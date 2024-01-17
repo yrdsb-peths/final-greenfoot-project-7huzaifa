@@ -16,7 +16,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         Survivor survivor = new Survivor();
-        addObject(survivor, 300, 300);
+        addObject(survivor, 20, 300);
         createZombie();
         
         bg = new GreenfootImage("images/Backyardpool.png");
