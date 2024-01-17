@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -28,6 +28,12 @@ public class MyWorld extends World
         scoreLabel = new Label(0,70);
         addObject(scoreLabel, 550, 50);
     }
+    public void act(){
+        List<Zombie> zombie = getObjects(Zombie.class);
+        if(zombie.isEmpty()){
+            createZombie();
+        }    
+    }    
         public void createZombie()
     {
         Zombie zombie = new Zombie();

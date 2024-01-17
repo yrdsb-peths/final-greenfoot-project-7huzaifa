@@ -16,7 +16,7 @@ public class Title extends World
         super(600, 400, 1);
         prepare();
         
-        titleScreen = new GreenfootImage("images/lastTitleScreen.png");
+        titleScreen = new GreenfootImage("images/gameTitleScreen.png");
         titleScreen.scale(getWidth(), getHeight());
         setBackground(titleScreen);        
     }
