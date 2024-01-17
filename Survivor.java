@@ -1,7 +1,7 @@
 import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Elephants are great.
+ * Survivor class.
  * 
  * @author Qureshi
  * @version November 2023
@@ -24,19 +24,11 @@ public class Survivor extends Actor
             idleRight[i].scale(100, 100);
             idleRight[i].mirrorHorizontally();
         }
-        for(int i = 0; i < idleLeft.length; i++) {
-            idleLeft[i] = new GreenfootImage("images/character/walk" + i + ".png");
-            idleLeft[i].scale(100, 100);
-        }
         for(int i = 0; i < shootRight.length; i++){
             shootRight[i] = new GreenfootImage("images/character/shoot" + i + ".png");
             shootRight[i].scale(100, 100);
             shootRight[i].mirrorHorizontally();
         }    
-        for(int i = 0; i < shootLeft.length; i++){
-            shootLeft[i] = new GreenfootImage("images/character/shoot" + i + ".png");
-            shootLeft[i].scale(100, 100);
-        }
         animationTimer.mark();
         setImage(idleRight[0]);
     }
@@ -47,36 +39,12 @@ public class Survivor extends Actor
                 setImage(idleRight[imageIndex]);
                 imageIndex = (imageIndex + 1) % idleRight.length;
             }
-            else{
-                setImage(idleLeft[imageIndex]);
-                imageIndex = (imageIndex + 1) % idleLeft.length;
-            }
-            if(Greenfoot.isKeyDown("space")){//&& facing.equals("right")){
-                setImage(shootRight[imageIndex]);
-                imageIndex = (imageIndex + 1) % idleRight.length;
-            }
             animationTimer.mark();
         }
     }    
 
     public void act() 
     {
-        if(Greenfoot.isKeyDown("a")){
-            move(-6);
-            facing = "left";
-        }
-        else if(Greenfoot.isKeyDown("d")){
-            move(6);
-            facing = "right";
-        }
-        if(Greenfoot.isKeyDown("left")){
-            move(-6);
-            facing = "left";
-        }
-        else if(Greenfoot.isKeyDown("right")){
-            move(6);
-            facing = "right";
-        }
         if(Greenfoot.isKeyDown("w")){
             moveVertically(-6);
         }
