@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Titlescreen for the hungry animal game.
+ * Titlescreen for the zombie survival game.
  * 
- * @Qureshi (your name) 
- * @December 2023 (a version number or a date)
+ * @Qureshi
+ * @December 2023
  */
 public class Title extends World
 {

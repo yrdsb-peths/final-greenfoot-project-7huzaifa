@@ -1,10 +1,10 @@
 import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Survivor class.
+ * The only survivor in this zombie-infested world.
  * 
- * @author Qureshi
- * @version November 2023
+ * @Qureshi
+ * @December 2023
  */
 public class Survivor extends Actor
 {
@@ -58,6 +58,7 @@ public class Survivor extends Actor
         walkingSound.play();
     }
     private void moveVertically(int distance) {
+        // Allows the actor to move vertically
         int yCoordinate = getY() + distance;
         setLocation(getX(), yCoordinate);
     }    
@@ -65,6 +66,7 @@ public class Survivor extends Actor
         return score;
     }
     private void shoot() {
+        // Shoots projectiles to eliminate zombies
         Bullet bullet = new Bullet();
         int x = 20;
         int y = getY();
