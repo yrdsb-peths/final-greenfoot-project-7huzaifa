@@ -25,7 +25,7 @@ public class GameOverWorld extends World
         gameOver.scale(getWidth(), getHeight());
         setBackground(gameOver);
         Label finalScoreLabel = new Label(score, 60);
-        addObject(finalScoreLabel, getWidth()/2 + 80, 315);
+        addObject(finalScoreLabel, getWidth()/2 + 100, 315);
         
     }
 }
