@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BulletS here.
+ * Bullets to kill zombies with.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Qureshi
+ * @January 2024
  */
 public class Bullet extends Actor
 {
@@ -20,9 +20,9 @@ public class Bullet extends Actor
         Zombie zombie = (Zombie) getOneIntersectingObject(Zombie.class);
         if(zombie != null){
             world.removeObject(zombie);
+             world.increaseScore();
             world.removeObject(this);
-            world.increaseScore();
-            
+            return; 
         }   
         if(getX() >= getWorld().getWidth()-1){
             getWorld().removeObject(this);

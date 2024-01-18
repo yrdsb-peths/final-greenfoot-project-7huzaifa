@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Game over world/screen for when the player loses the game.
  * 
- * @Qureshi (your name) 
- * @December 2023 (a version number or a date)
+ * @Qureshi 
+ * @December 2023
  */
 public class GameOverWorld extends World
 {
@@ -20,6 +20,7 @@ public class GameOverWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
+        score = MyWorld.getScore();
         gameOver = new GreenfootImage("images/gameOver.png");
         gameOver.scale(getWidth(), getHeight());
         setBackground(gameOver);

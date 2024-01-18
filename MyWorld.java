@@ -1,20 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
- * Write a description of class MyWorld here.
+ * Main world for the zombie survival game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Qureshi 
+ * @December 2023
  */
 public class MyWorld extends World
 {
     private GreenfootImage bg;
     private static int score = 0;
     private Label scoreLabel;
+    private int level;
+    
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        level = 1;
         Survivor survivor = new Survivor();
         addObject(survivor, 20, 300);
         createZombie();
@@ -44,7 +46,14 @@ public class MyWorld extends World
     public void increaseScore() {
         score = score + 1;
         scoreLabel.setValue(score);
+        
+        if(score % 5 == 0){
+            level ++;
+        }
     } 
+    public int getLevel(){
+        return level;
+    }
     public static int getScore(){
         return score;
     }    
