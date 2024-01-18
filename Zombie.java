@@ -12,7 +12,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
      * Act - do whatever the Zombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootSound zombieSound = new GreenfootSound("sounds/zombie.mp3");
+    GreenfootSound zombieSound = new GreenfootSound("sounds/zombieGroan.mp3");
     GreenfootImage[] zombieLeft = new GreenfootImage[24];
     SimpleTimer animationTimer = new SimpleTimer(); 
     private int imageIndex;    

@@ -9,6 +9,7 @@ import greenfoot.*;   //(World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Survivor extends Actor
 {
     GreenfootSound walkingSound = new GreenfootSound("sounds/walking.mp3");
+    GreenfootSound gunshotSound = new GreenfootSound("sounds/gunshot.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[7];
     GreenfootImage[] idleLeft = new GreenfootImage[7];
     GreenfootImage[] shootRight = new GreenfootImage[6];
@@ -70,6 +71,7 @@ public class Survivor extends Actor
         Bullet bullet = new Bullet();
         int x = 20;
         int y = getY();
-        getWorld().addObject(bullet, x, y);       
+        getWorld().addObject(bullet, x, y);
+        gunshotSound.play();
     }    
 }
